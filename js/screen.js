@@ -30,7 +30,7 @@ exports.draw_sprite = function (screen, sheet, sprite, x, y) {
 // screen -> sheet -> map -> [[screen_side_effect]]
 exports.draw_map = function (screen, sheet, m) {
 	var ctx = screen.getContext('2d'),
-		l = m.level.map(row => row.map(col => m.key[col]));
+		l = m.level;
 
 	for (var y = 0; y < l.length; y++) {
 		for (var x = 0; x < l[0].length; x++) {
@@ -38,4 +38,10 @@ exports.draw_map = function (screen, sheet, m) {
 			exports.draw_sprite(screen, sheet, s, x * s.w, y * s.h);
 		}
 	}
+};
+
+
+// game -> [[screen_side_effect]]
+exports.draw_game = function (game) {
+	exports.draw_map(game.screen, game.sheet, game.map);
 };

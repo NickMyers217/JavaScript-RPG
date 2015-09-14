@@ -18,9 +18,10 @@ function Map (title, key, level) {
 // json -> sprite_sheet -> map
 exports.load_map = function (map_json, sheet) {
 	var m = map_json,
-		key = m.sprite_key.map((s, i) =>
-				spr.get_sprite(sheet, m.sprite_key[i].x, m.sprite_key[i].y));
-		level = m.level;
-
+		key = m.sprite_key;
+		level = m.level.map(row =>
+				row.map(col =>
+					spr.get_sprite(sheet, m.sprite_key[col].x, m.sprite_key[col].y)));
+	
 	return new Map(m.title, key, level);
 };
