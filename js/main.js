@@ -11,5 +11,7 @@ window.onload = function () {
 
 	sht.image.onload = function () {
 		screen.draw_game(g);
+
+		console.log(g);
 	};
 };
