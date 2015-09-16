@@ -9,6 +9,17 @@ But with the new ES6 standard, I think vanilla JS is much simpler, as well as be
 
 Going to make casual updates to this whenever I have time.
 
+# Instructions
+To get around the lack of most browser implementing real ES6 modules, I am using Node.js modules.
+
+This means I have to recursively bundle my javascript modules before running.
+
+I use BEEFY to do this, which uses browserify.
+
+npm install -g beefy browserify should get you both.
+
+You can then use the unix makefile to build and run a live refreshing demo on localhost.
+
 
 # Credits
 The sprite sheet was obtained from http://opengameart.org/content/dungeon-crawl-32x32-tiles.
