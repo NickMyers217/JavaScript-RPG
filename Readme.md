@@ -12,13 +12,11 @@ Going to make casual updates to this whenever I have time.
 # Instructions
 To get around the lack of most browser implementing real ES6 modules, I am using Node.js modules.
 
-This means I have to recursively bundle my javascript modules before running.
+This means I have to recursively bundle my javascript modules before running. I use BEEFY to do this, which uses browserify.
 
-I use BEEFY to do this, which uses browserify.
+Use "sudo npm install" to install these dependencies with node package manager.
 
-npm install -g beefy browserify should get you both.
-
-You can then use the unix makefile to build and run a live refreshing demo on localhost.
+Then you can then use the unix makefile (just run "make") to build and run a live refreshing demo on localhost.
 
 
 # Credits

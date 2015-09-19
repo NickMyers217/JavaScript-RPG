@@ -1,0 +1,16 @@
+{
+  "name": "rpg",
+  "version": "1.0.0",
+  "description": "A javascript rpg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickMyers217/JavaScript-RPG.git"
+  },
+  "author": "Nick Myers",
+  "license": "WTFPL",
+  "dependencies": {
+	  "browserify": ">= 11.1.0",
+	  "beefy": ">= 2.1.5",
+	  "underscore": ">= 1.8.3"
+  }
+}

@@ -18,3 +18,4 @@ function Entity (x, y, sprite) {
 exports.createEntity = function (x, y, sprite) {
 	return new Entity(x, y, sprite);
 };
+
