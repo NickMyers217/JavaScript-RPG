@@ -5,7 +5,8 @@
 
 
 // Dependencies
-var dom = require('./dom.js');
+var _ = require('underscore'),
+	dom = require('./dom.js');
 
 
 // createScreen :: string -> Screen
@@ -30,7 +31,7 @@ exports.drawSprite = function (screen, sheet, sprite, x, y) {
 exports.drawGame = function (game) {
 	var ctx = game.screen.getContext('2d');
 
-	game.map.level.forEach((row, y) =>
-			row.forEach((s, x) =>
+	_.forEach(game.map.level, (row, y) =>
+			_.forEach(row, (s, x) =>
 				exports.drawSprite(game.screen, game.sheet, s, x * s.w, y * s.h)));
 };
