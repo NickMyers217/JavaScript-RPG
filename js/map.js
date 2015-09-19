@@ -15,7 +15,7 @@ function Map (title, key, level) {
 }
 
 
-// json -> sprite_sheet -> Map
+// loadMap :: json -> sprite_sheet -> Map
 exports.loadMap = function (mapJson, sheet) {
 	var m = mapJson,
 		key = m.spriteKey;

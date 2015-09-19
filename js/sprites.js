@@ -22,7 +22,7 @@ function Sprite (x, y, w, h) {
 	this.h = h;
 }
 
-// file_path -> int -> int -> int -> int -> SpriteSheet
+// loadSpriteSheet :: filePath -> int -> int -> int -> int -> SpriteSheet
 exports.loadSpriteSheet = function (filePath, cx, cy, sx, sy) {
 	var img = new Image();
 	img.src = filePath;
@@ -31,7 +31,7 @@ exports.loadSpriteSheet = function (filePath, cx, cy, sx, sy) {
 };
 
 
-// SpriteSheet -> int -> int -> Sprite
+// getSprite :: SpriteSheet -> int -> int -> Sprite
 exports.getSprite = function (sheet, spriteX, spriteY) {
 	return new Sprite(spriteX * sheet.spriteW,
 					  spriteY * sheet.spriteH,

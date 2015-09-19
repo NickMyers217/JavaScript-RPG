@@ -8,7 +8,7 @@
 var dom = require('./dom.js');
 
 
-// string -> Screen
+// createScreen :: string -> Screen
 exports.createScreen = function (id, width, height) {
 	var scr = dom.create('canvas', id);
 	if (width) scr.width = width;
@@ -18,7 +18,7 @@ exports.createScreen = function (id, width, height) {
 };
 
 
-// Screen -> Sheet -> Sprite -> int -> int -> ()
+// drawSprite :: Screen -> Sheet -> Sprite -> int -> int -> ()
 exports.drawSprite = function (screen, sheet, sprite, x, y) {
 	var ctx = screen.getContext('2d');
 
@@ -26,7 +26,7 @@ exports.drawSprite = function (screen, sheet, sprite, x, y) {
 };
 
 
-// Game -> ()
+// drawGame :: Game -> ()
 exports.drawGame = function (game) {
 	var ctx = game.screen.getContext('2d');
 

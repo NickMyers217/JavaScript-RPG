@@ -25,7 +25,7 @@ var game = {
 */
 
 
-// int -> int -> SpriteSheet -> Game
+// createGame :: int -> int -> SpriteSheet -> Game
 var createGame = function (width, height, sheet) {
 	var scr = screen.createScreen('game', width, height),
 		level1 = map.loadMap(require('./maps/level1.json'), sheet);
