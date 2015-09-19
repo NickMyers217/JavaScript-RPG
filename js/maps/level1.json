@@ -1,6 +1,6 @@
 {
 	"title": "level1",
-	"sprite_key": [
+	"spriteKey": [
 		{ "x": 27, "y": 16 },
 		{ "x": 28, "y": 16 },
 		{ "x": 29, "y": 16 },

@@ -1,35 +1,40 @@
-// Sprites module
+/*
+ * Sprites module
+ *
+ */
 
 
 // Sprite_Sheet object
-function Sprite_Sheet (image, count_x, count_y, size_x, size_y) {
+function SpriteSheet (image, countX, countY, spriteW, spriteH) {
 	this.image = image;
-	this.count_x = count_x;
-	this.count_y = count_y;
-	this.size_x = size_x;
-	this.size_y = size_y;
+	this.countX = countX;
+	this.countY = countY;
+	this.spriteW = spriteW;
+	this.spriteH = spriteH;
 }
 
 
 // Sprite object
 function Sprite (x, y, w, h) {
-	this.x = x; this.y = y;
-	this.w = w; this.h = h;
+	this.sheetX = x;
+	this.sheetY = y;
+	this.w = w;
+	this.h = h;
 }
 
-// file_path -> int -> int -> int -> int -> sprite_sheet
-exports.load_sprite_sheet = function (file_path, cx, cy, sx, sy) {
+// file_path -> int -> int -> int -> int -> SpriteSheet
+exports.loadSpriteSheet = function (filePath, cx, cy, sx, sy) {
 	var img = new Image();
-	img.src = file_path;
+	img.src = filePath;
 
-	return new Sprite_Sheet(img, cx, cy, sx, sy);
+	return new SpriteSheet(img, cx, cy, sx, sy);
 };
 
 
-// sprite_sheet -> int -> int -> sprite
-exports.get_sprite = function (sheet, sprite_x, sprite_y) {
-	return new Sprite(sprite_x * sheet.size_x,
-					  sprite_y * sheet.size_y,
-					  sheet.size_x,
-					  sheet.size_y);
+// SpriteSheet -> int -> int -> Sprite
+exports.getSprite = function (sheet, spriteX, spriteY) {
+	return new Sprite(spriteX * sheet.spriteW,
+					  spriteY * sheet.spriteH,
+					  sheet.spriteW,
+					  sheet.spriteH);
 };
