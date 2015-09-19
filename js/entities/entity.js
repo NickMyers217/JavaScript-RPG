@@ -1,6 +1,7 @@
 /*
  * Entity module
  *
+ * The base entity that other entities derive from
  */
 
 
@@ -9,15 +10,16 @@ var sprite = require('./sprites.js');
 
 
 // Entity object
-function Entity (x, y, sprite) {
+function Entity (name, x, y, sprite) {
+	this.name = name;
 	this.x = x;
 	this.y = y;
-	this.sprite = sprite;
+	this.sprite = sprites;
 }
 
 
 // createEntity :: int -> int -> Sprite -> Entity
-exports.createEntity = function (x, y, sprite) {
-	return new Entity(x, y, sprite);
+exports.createEntity = function (name, x, y, sprite) {
+	return new Entity(name, x, y, sprite);
 };
 
