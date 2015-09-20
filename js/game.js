@@ -42,15 +42,41 @@ exports.createGame = function (width, height) {
 };
 
 
-// render :: Game -> ()
-exports.render = function (game) {
+// run :: Game -> ()
+exports.run = function (game) {
+	requestAnimationFrame(() => frame(game, util.timestamp()));
+};
+
+
+// update :: Game -> int -> Game
+var update = function (game) {
+	game.player.move(1, 1);
+};
+
+
+// render :: Game -> int -> ()
+var render = function (game) {
 	var plyr = game.player;
+
+	screen.clear(game.screen);
 	
-	_.forEach(_.sortBy(game.entities, e => e.zindex), function (e) {
+	game.entities.forEach(function (e) {
 		if (e.drawable)
 			screen.drawSprite(game.screen, game.sheet, e.sprite, e.x, e.y);
 	});
 
 	if (plyr.drawable)
 		screen.drawSprite(game.screen, game.sheet, plyr.sprite, plyr.x, plyr.y);
+};
+
+
+// frame :: Game -> int -> ()
+var frame = function (game, last) {
+	var now = util.timestamp(),
+		dt = Math.min(1, (now - last) / 1000);
+
+	update(game, dt);
+	render(game, dt);
+
+	requestAnimationFrame(() => frame(game, now));
 };

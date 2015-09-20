@@ -3,19 +3,24 @@
  *
  */
 
+
+// Dependencies
 var util = require('./util.js'),
 	dom = require('./dom.js'),
 	game = require('./game.js');
 
 
+util.underscoreMixins();
+
+
 window.onload = function () {
 	var g = game.createGame(800, 600);
 
-	console.log(g);
-
 	dom.addToPage(g.screen);
 
+	console.log(g);
+
 	g.sheet.image.onload = function () {
-		game.render(g);
+		game.run(g);
 	};
 };

@@ -48,5 +48,5 @@ exports.createWall = function (name, x, y, sprite) {
 exports.createPlayer = function (name, x, y, sprite) {
 	var p = exports.createEntity(name, x, y, sprite);
 
-	return _.extend(p, traits.collidable, traits.drawable, traits.alive);
+	return _.extend(p, traits.collidable, traits.drawable, traits.alive, traits.movable);
 };

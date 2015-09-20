@@ -20,6 +20,14 @@ exports.createScreen = function (id, width, height) {
 };
 
 
+// clear :: Screen -> ()
+exports.clear = function (screen) {
+	var ctx = screen.getContext('2d');
+
+	ctx.clearRect(0, 0, screen.width, screen.height);
+};
+
+
 // drawSprite :: Screen -> Sheet -> Sprite -> int -> int -> ()
 exports.drawSprite = function (screen, sheet, sprite, x, y) {
 	var ctx = screen.getContext('2d');

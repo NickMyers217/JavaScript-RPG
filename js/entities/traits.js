@@ -26,3 +26,12 @@ exports.alive = {
 	totalHP: 100,
 	hpPercent: 100
 };
+
+
+// The entity can move
+exports.movable = {
+	move: function (dx, dy) {
+		this.x += dx;
+		this.y += dy;
+	}
+};
