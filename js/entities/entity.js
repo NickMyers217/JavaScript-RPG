@@ -22,13 +22,13 @@ function Entity (name, x, y, sprite) {
 }
 
 
-// createEntity :: int -> int -> Sprite -> Entity
+// createEntity :: string -> int -> int -> Sprite -> Entity
 exports.createEntity = function (name, x, y, sprite) {
 	return new Entity(name, x, y, sprite);
 };
 
 
-// createFloor :: int -> int -> Sprite -> Entity
+// createFloor :: string -> int -> int -> Sprite -> Entity
 exports.createFloor = function (name, x, y, sprite) {
 	var flr = exports.createEntity(name, x, y, sprite);
 
@@ -36,9 +36,17 @@ exports.createFloor = function (name, x, y, sprite) {
 };
 
 
-// createWall :: int -> int -> Sprite -> Entity
+// createWall :: string -> int -> int -> Sprite -> Entity
 exports.createWall = function (name, x, y, sprite) {
 	var wall = exports.createEntity(name, x, y, sprite);
 
 	return _.extend(wall, traits.collidable, traits.drawable);
+};
+
+
+// createPlayer :: string -> int -> int -> Sprite -> [a] -> Entity
+exports.createPlayer = function (name, x, y, sprite) {
+	var p = exports.createEntity(name, x, y, sprite);
+
+	return _.extend(p, traits.collidable, traits.drawable, traits.alive);
 };

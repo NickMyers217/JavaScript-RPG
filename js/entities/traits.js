@@ -19,3 +19,10 @@ exports.drawable = {
 	drawable: true,
 	zindex: 0
 };
+
+
+// The entity is alive
+exports.alive = {
+	totalHP: 100,
+	hpPercent: 100
+};
