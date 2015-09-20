@@ -31,7 +31,8 @@ exports.drawSprite = function (screen, sheet, sprite, x, y) {
 exports.drawGame = function (game) {
 	var ctx = game.screen.getContext('2d');
 
-	_.forEach(game.map.level, (row, y) =>
-			_.forEach(row, (s, x) =>
-				exports.drawSprite(game.screen, game.sheet, s, x * s.w, y * s.h)));
+	_.forEach(_.sortBy(game.entities, e => e.zindex), function (e) {
+		if (e.drawable)
+			exports.drawSprite(game.screen, game.sheet, e.sprite, e.x, e.y);
+	});
 };

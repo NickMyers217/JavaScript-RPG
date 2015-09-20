@@ -16,5 +16,6 @@ exports.collidable = {
 
 // The entity can be drawn
 exports.drawable = {
+	drawable: true,
 	zindex: 0
 };

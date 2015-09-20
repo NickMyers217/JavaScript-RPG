@@ -1,20 +1,76 @@
 {
 	"title": "level1",
 	"spriteKey": [
-		{ "x": 27, "y": 16 },
-		{ "x": 28, "y": 16 },
-		{ "x": 29, "y": 16 },
-		{ "x": 30, "y": 16 },
-		{ "x": 31, "y": 16 },
-		{ "x": 32, "y": 16 },
-		{ "x": 33, "y": 16 },
-		{ "x": 34, "y": 16 },
-		{ "x": 35, "y": 16 },
-		{ "x": 36, "y": 16 },
-		{ "x": 37, "y": 16 },
-		{ "x": 38, "y": 16 },
-		{ "x": 39, "y": 16 },
-		{ "x": 40, "y": 16 }
+		{
+			"name": "diamondFloor1",
+			"sprite": { "x": 27, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor2",
+			"sprite": { "x": 28, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor3",
+			"sprite": { "x": 29, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor4",
+			"sprite": { "x": 30, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor5",
+			"sprite": { "x": 31, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor6",
+			"sprite": { "x": 32, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor7",
+			"sprite": { "x": 33, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor8",
+			"sprite": { "x": 34, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor9",
+			"sprite": { "x": 35, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondFloor10",
+			"sprite": { "x": 36, "y": 16 },
+			"factory": "createFloor"
+		},
+		{
+			"name": "diamondWall1",
+			"sprite": { "x": 37, "y": 16 },
+			"factory": "createWall"
+		},
+		{
+			"name": "diamondWall2",
+			"sprite": { "x": 38, "y": 16 },
+			"factory": "createWall"
+		},
+		{
+			"name": "diamondWall3",
+			"sprite": { "x": 39, "y": 16 },
+			"factory": "createWall"
+		},
+		{
+			"name": "diamondWall4",
+			"sprite": { "x": 40, "y": 16 },
+			"factory": "createWall"
+		}
 	],
 	"level": [
 		[12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],

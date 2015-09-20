@@ -1,6 +1,8 @@
-var screen = require('./screen.js'),
+var _ = require('underscore'),
+	util = require('./util.js'),
+	screen = require('./screen.js'),
 	sprite = require('./sprites.js'),
-	map = require('./map.js'),
+	ent = require('./entities/entity.js'),
 	dom = require('./dom.js');
 
 /* How the overall data structure should look (work in progress)
@@ -18,9 +20,9 @@ var game = {
 			// An image element with the sprite sheet image
 		}
 	},
-	"entities": {
-		// An object containing arrays for all the game entities
-	}
+	"entities": [
+		// An array containing all the game entities
+	]
 };
 */
 
@@ -28,12 +30,21 @@ var game = {
 // createGame :: int -> int -> SpriteSheet -> Game
 var createGame = function (width, height, sheet) {
 	var scr = screen.createScreen('game', width, height),
-		level1 = map.loadMap(require('./maps/level1.json'), sheet);
+		lvl = require('./maps/level1.json'),
+		key = lvl.spriteKey,
+		entities = _.chain(lvl.level)
+			.indexedDoubleMap((a, x, y) => 
+					ent[key[a].factory](key[a].name,
+										x * sheet.spriteW,
+										y * sheet.spriteH,
+										sprite.getSprite(sheet, key[a].sprite.x, key[a].sprite.y)))
+			.flatten()
+			.value();
 
 	return {
-		map: level1,
 		sheet: sheet,
-		screen: scr
+		screen: scr,
+		entities: entities
 	};
 };
 
