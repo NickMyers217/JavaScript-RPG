@@ -1,6 +1,7 @@
 /*
  * Screen module
  *
+ * Utilities for creating and rendering to HTLM5 canvas elements
  */
 
 

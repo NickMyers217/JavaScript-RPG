@@ -1,9 +1,15 @@
+/*
+ * Main entry point
+ *
+ */
+
 var _ = require('underscore'),
 	util = require('./util.js'),
 	screen = require('./screen.js'),
 	sprite = require('./sprites.js'),
 	ent = require('./entities/entity.js'),
 	dom = require('./dom.js');
+
 
 /* How the overall data structure should look (work in progress)
 var game = {
@@ -34,10 +40,11 @@ var createGame = function (width, height, sheet) {
 		key = lvl.spriteKey,
 		entities = _.chain(lvl.level)
 			.indexedDoubleMap((a, x, y) => 
-					ent[key[a].factory](key[a].name,
-										x * sheet.spriteW,
-										y * sheet.spriteH,
-										sprite.getSprite(sheet, key[a].sprite.x, key[a].sprite.y)))
+					ent[key[a].factory](
+						key[a].name,
+						x * sheet.spriteW,
+						y * sheet.spriteH,
+						sprite.getSprite(sheet, key[a].sprite.x, key[a].sprite.y)))
 			.flatten()
 			.value();
 

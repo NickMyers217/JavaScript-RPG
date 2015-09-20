@@ -1,6 +1,7 @@
 /*
  * DOM module
  *
+ * Utilities for the document object model
  */
 
 // addToPage :: Element -> ()

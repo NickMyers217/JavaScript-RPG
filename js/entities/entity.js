@@ -1,7 +1,10 @@
 /*
  * Entity module
  *
- * The base entity that other entities derive from
+ * Various entities and factories that create them
+ *
+ * NOTE: factory functions should be well managed and consistent
+ * because their function pointers are used in the level JSON files
  */
 
 
@@ -23,6 +26,7 @@ function Entity (name, x, y, sprite) {
 exports.createEntity = function (name, x, y, sprite) {
 	return new Entity(name, x, y, sprite);
 };
+
 
 // createFloor :: int -> int -> Sprite -> Entity
 exports.createFloor = function (name, x, y, sprite) {

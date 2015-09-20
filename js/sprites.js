@@ -1,6 +1,7 @@
 /*
  * Sprites module
  *
+ * Utilites for loading and fetching images from a sprite sheet
  */
 
 
@@ -33,8 +34,9 @@ exports.loadSpriteSheet = function (filePath, cx, cy, sx, sy) {
 
 // getSprite :: SpriteSheet -> int -> int -> Sprite
 exports.getSprite = function (sheet, spriteX, spriteY) {
-	return new Sprite(spriteX * sheet.spriteW,
-					  spriteY * sheet.spriteH,
-					  sheet.spriteW,
-					  sheet.spriteH);
+	return new Sprite(
+			spriteX * sheet.spriteW,
+			spriteY * sheet.spriteH,
+			sheet.spriteW,
+			sheet.spriteH);
 };
